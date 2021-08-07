@@ -6,7 +6,13 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 
+import {toggleinCart} from './actions.js'
+
 class ShoppingList extends (react.Component) {
+    handleChange(event, index) {
+        this.props.updateCart(index, event.target.value);
+    }
+
     render() {
         return (
             <Card>
@@ -31,5 +37,14 @@ class ShoppingList extends (react.Component) {
 function mapStateToProps (state) {
     return {shopping_list: state.shopping_list};
 }
-var ConnectedShoppingList = connect(mapStateToProps)(ShoppingList);
+
+function mapDispatchToProps (dispatch) {
+    return {
+      updateCart: function (index, toggleinCart) {
+        dispatch(toggleinCart(index, toggleinCart))
+      }
+    }
+  }
+
+var ConnectedShoppingList = connect(mapStateToProps, mapDispatchToProps)(ShoppingList);
 export default ConnectedShoppingList;
