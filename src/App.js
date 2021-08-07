@@ -1,24 +1,27 @@
 import logo from './logo.svg';
-import './App.css';
+
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
+import ShoppingList from './shopping-list.jsx';
+import AddItem from './add-item.jsx';
+
+const NoMatch = ({ location }) => (
+  <div>
+    <h3>Page not found: {location.pathname}</h3>
+  </div>
+)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+      <Switch>
+        <Route exact path="/" component={ShoppingList}/>
+        <Route path="/add" component={AddItem}/>
+        <Route component={NoMatch}/>
+      </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
