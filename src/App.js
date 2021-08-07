@@ -10,6 +10,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 import ShoppingList from './shopping-list.jsx';
+import ShoppingCount from './shopping-count.jsx'
 import AddItem from './add-item.jsx';
 import store from './store.js';
 
@@ -46,9 +47,8 @@ function App() {
           <div className="App">
             <AppBar position="relative">
               <Toolbar>
-                <h1 style={{textDecoration: 'none', color: 'white'}}></h1>
+                <h1><Link to ="/" style={{textDecoration: 'none', color: 'white'}}>Shopping List</Link></h1>
                 <header>
-                  <h1>Shopping List</h1>
                 </header>
               </Toolbar>
             </AppBar>

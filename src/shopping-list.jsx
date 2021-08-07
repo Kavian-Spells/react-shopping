@@ -27,7 +27,7 @@ class ShoppingList extends (react.Component) {
                     </ul>
                 </CardContent>
                 <CardActions>
-                    <Button>Add Item</Button>
+                    {/* <Button component={Link} to="/add">Add Item</Button> */}
                 </CardActions>
             </Card>
         )
