@@ -15,6 +15,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <header>
+          <h1><Link to="/">Shopping List</Link></h1>
+        </header>
       <Switch>
         <Route exact path="/" component={ShoppingList}/>
         <Route path="/add" component={AddItem}/>
